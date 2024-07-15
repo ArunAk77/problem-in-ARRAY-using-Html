@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*------------------------------------fizz buzz--------------------*/
+for( let num=1;num<=100;num++)
+{
+    if(num%3==0 && num%5!=0)
+    {
+        console.log("FIZZ")
+    }
+    else if(num%5==0 && num%3!=0)
+    {
+        console.log("BUZZ");
+    }
+    else if(num%5==0 && num%3==0)
+    {
+        console.log("FIZZ BUZZ");
+    }
+    else{
+    console.log(num);
+    }
+}
+
+
+/*-----------------cel to fah-----------------------------------*/
+function cel(num){
+    let fah=(num*9/5)+32;
+    document.write("fahreinheit value is : "+fah);
+}
+cel(30);
+
+/*-----------------------palindrome---------------------------------*/
+      
+        function name(str){
+          for(let i=str.length;i>0;i--)
+          {
+            if(str [i]=str.charAt(str.length)-1)
+                console.log("word is palindrome");
+             else 
+             console.log("not a palindrome");
+          }
+        }
+        name("malayalam");
+        /*------------------------------largest num-----------------------*/
+
+        function large(arr){
+            let max=arr[0];
+            for(let i=1;i<arr.length;i++){
+                if(arr[i]>max)
+                max=arr[i];
+            }
+            return max;
+        }
+        let arr=[22,34,32,54,67,45];
+        console.log("Largest num is : " +large(arr));
+
+        /*----------------------factorial-------------------------*/
+
+        function fact(num){
+            let result=1;
+                if(num==0)
+                return(1);
+            for(let i=2;i<=num;i++)
+            result=result*i;
+        return result;
+        }
+        console.log("factorial of num is : "+fact(4));
+
+        /*--------------------------largest word---------*/
+        function longest(string){
+            let str=string.split(" ");
+            let long=0;
+            let word=null;
+            for(let i=0;i<str.length-1;i++){
+                if(long<str[i].length){
+                    long=str[i].length;
+                    word=str[i];
+                }
+            }
+            return word;
+        }
+        console.log(longest("arun kumarS is born to win"));
+
+        /*-------------------Missing num---------------------------*/
+
+        function MissingNumber(arr) {
+    const n = arr.length + 1;
+    const sumn = (n * (n + 1)) / 2;
+
+    let sum = 0;
+    for (let i = 0; i < n - 1; i++) {
+        sum = sum+ arr[i];
+    }
+
+    let missingNumber = sumn - sum;
+
+    return missingNumber;
+}
+
+const arr1 = [1, 2, 5, 4, 6, 8, 7];
+const missingNumber = MissingNumber(arr1);
+console.log("Missing Number: ", missingNumber);
+/*-------------------------------occurance--------------------------------------------*/
+    
+    function repeat(str){
+            for(let i=0;i<str.length;i++)
+            {
+                count=0;
+                for(let j=i+1;j<str.length;j++)
+            {
+                if(str[i]===str[j])
+                count++;
+            }
+            console.log(str[i]+":"+count);
+            }
+    }
+    repeat("arun Kumar");
+    </script>
+    
+</body>
+</html>
